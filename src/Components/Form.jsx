@@ -12,7 +12,7 @@ export function Form() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/getFormData");
+                const response = await axios.get("https://letsconnect-foij.onrender.com/getFormData");
                 setFormDataList(response.data);
             } catch (error) {
                 console.error("Error fetching form data:", error);
