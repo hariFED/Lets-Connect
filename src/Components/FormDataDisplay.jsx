@@ -4,8 +4,6 @@ import PropTypes from "prop-types"
 const FormDataDisplay = ({ formDataList, subGroupOptions }) => {
     const [nameFilter, setNameFilter] = useState("");
     const [subgroupFilter, setSubgroupFilter] = useState("");
-
-    // Filter the data based on the name and subgroup filters
     const filteredData = formDataList.filter(
         (data) =>
 
@@ -15,7 +13,7 @@ const FormDataDisplay = ({ formDataList, subGroupOptions }) => {
 
     return (
         <div >
-            <div className="flex items-center justify-center gap-20 mt-12 poppins">
+            <div className="flex flex-col items-center justify-center mt-12 sm:gap-20 sm:flex-row poppins">
                 <div className="mb-4">
                     <label className="mr-2">Filter by Name:</label>
                     <input className="h-16 text-center border-2 rounded-lg outline-none border-slate-100 placeholder:text-center focus:border-green-500 focus:border-2"
@@ -42,7 +40,7 @@ const FormDataDisplay = ({ formDataList, subGroupOptions }) => {
             </div>
 
             <div>
-                <div>
+                <div className="">
                     <ul className="flex items-center justify-between max-w-6xl mx-auto mb-4 font-bold bg-white rounded-lg poppins">
                         <li className="w-24 py-5 text-center rounded-l-lg">SI.No</li>
                         <li className="w-64 py-5 text-center ">Name</li>

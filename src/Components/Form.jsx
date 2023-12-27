@@ -12,7 +12,7 @@ export function Form() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("https://letsconnect-foij.onrender.com/getFormData");
+                const response = await axios.get("http://localhost:5000/getFormData");
                 setFormDataList(response.data);
             } catch (error) {
                 console.error("Error fetching form data:", error);
@@ -25,7 +25,7 @@ export function Form() {
 
 
     const onSubmit = async (formData) => {
-        // Check if GitHub or LinkedIn already exists in formDataList
+
         const isDuplicate = formDataList.some(
             (data) => data.github === formData.github || data.LinkedIn === formData.LinkedIn
         );
@@ -37,7 +37,7 @@ export function Form() {
                 const response = await axios.post("http://localhost:5000/submitForm", formData);
                 console.log("Data sent to backend:", response.data);
 
-                // Update formDataList after successfully sending to the backend
+
                 setFormDataList((prevData) => [...prevData, formData]);
                 alert("Data saved successfully!");
             } catch (error) {
